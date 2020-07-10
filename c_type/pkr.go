@@ -6,6 +6,7 @@ import (
 )
 
 type PKr [96]byte
+type PKrEx [97]byte
 
 func (self *PKr) ZPKr() (ret Uint256) {
 	copy(ret[:], self[:32])
