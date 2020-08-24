@@ -76,7 +76,7 @@ func IsMyPKr(tk *c_type.Tk, pkr *c_type.PKr) (succ bool) {
 }
 
 func SignPKr_ByHeight(num uint64, sk *c_type.Uint512, data *c_type.Uint256, pkr *c_type.PKr) (sign c_type.Uint512, e error) {
-	if num >= axisparam.SIP5() {
+	if num >= axisparam.XIP5() {
 		return c_superzk.SignPKr_X(sk, data, pkr)
 	} else {
 		e = errors.New("czero not support after sip5")
@@ -85,7 +85,7 @@ func SignPKr_ByHeight(num uint64, sk *c_type.Uint512, data *c_type.Uint256, pkr 
 }
 
 func VerifyPKr_ByHeight(num uint64, data *c_type.Uint256, sign *c_type.Uint512, pkr *c_type.PKr) bool {
-	if num >= axisparam.SIP5() {
+	if num >= axisparam.XIP5() {
 		return c_superzk.VerifyPKr_X(data, sign, pkr)
 	} else {
 		fmt.Println("czero not support after sip5")
