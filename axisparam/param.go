@@ -68,7 +68,7 @@ func XIP7() uint64 {
 	if is_dev {
 		return 0
 	} else {
-		return uint64(186500)
+		return uint64(186400)
 	}
 }
 const MAX_O_INS_LENGTH = int(2500)
