@@ -4,7 +4,7 @@ func XIP1() uint64 {
 	if is_dev {
 		return 0
 	} else {
-		return uint64(0) //for miner rewards
+		return uint64(1) //for miner rewards
 	}
 }
 
@@ -12,15 +12,15 @@ func XIP2() uint64 {
 	if is_dev {
 		return 0
 	} else {
-		return uint64(0)
+		return uint64(1)
 	}
 }
 
 func XIP3() uint64 {
 	if is_dev {
-		return uint64(940410)
-	} else {
 		return uint64(0)
+	} else {
+		return uint64(1)
 	}
 }
 
@@ -28,7 +28,7 @@ func VP1() uint64 {
 	if is_dev {
 		return 0
 	} else {
-		return uint64(0)
+		return uint64(1)
 	}
 }
 
@@ -36,7 +36,7 @@ func VP0() uint64 {
 	if is_dev {
 		return 0
 	} else {
-		return uint64(0)
+		return uint64(1)
 	}
 }
 
@@ -44,7 +44,7 @@ func XIP4() uint64 {
 	if is_dev {
 		return 0
 	} else {
-		return uint64(0)
+		return uint64(1)
 	}
 }
 
@@ -60,7 +60,7 @@ func XIP6() uint64 {
 	if is_dev {
 		return 50
 	} else {
-		return uint64(0)
+		return uint64(1)
 	}
 }
 
@@ -68,8 +68,16 @@ func XIP7() uint64 {
 	if is_dev {
 		return 0
 	} else {
-		return uint64(186400)
+		return uint64(1)
 	}
+}
+
+func XIP8() uint64 {
+        if is_dev {
+                return 50
+        } else {
+                return uint64(1)
+        }
 }
 const MAX_O_INS_LENGTH = int(2500)
 
