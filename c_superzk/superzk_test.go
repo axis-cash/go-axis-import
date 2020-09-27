@@ -164,7 +164,7 @@ func newUint256ByInt(i int) (ret c_type.Uint256) {
 
 func TestAsset(t *testing.T) {
 	oin_asset := c_type.Asset{
-		newUint256ByText("AXIS"),
+		newUint256ByText("SERO"),
 		newUint256ByInt(1000),
 		newUint256ByText("TKT"),
 		newUint256ByInt(100),
@@ -176,7 +176,7 @@ func TestAsset(t *testing.T) {
 	}
 
 	oout_asset := c_type.Asset{
-		newUint256ByText("AXIS"),
+		newUint256ByText("SERO"),
 		newUint256ByInt(1000),
 		newUint256ByText("TKT"),
 		newUint256ByInt(100),
@@ -188,7 +188,7 @@ func TestAsset(t *testing.T) {
 	}
 
 	zin_asset := c_type.Asset{
-		newUint256ByText("AXIS"),
+		newUint256ByText("SERO"),
 		newUint256ByInt(1000),
 		newUint256ByText("TKT"),
 		newUint256ByInt(100),
@@ -201,7 +201,7 @@ func TestAsset(t *testing.T) {
 	}
 
 	zout_asset := c_type.Asset{
-		newUint256ByText("AXIS"),
+		newUint256ByText("SERO"),
 		newUint256ByInt(1000),
 		newUint256ByText("TKT"),
 		newUint256ByInt(100),
@@ -236,7 +236,7 @@ func TestAsset(t *testing.T) {
 
 func TestRootCM(t *testing.T) {
 	asset := c_type.Asset{
-		newUint256ByText("AXIS"),
+		newUint256ByText("SERO"),
 		newUint256ByInt(1000),
 		newUint256ByText("TKT"),
 		newUint256ByInt(100),
@@ -275,26 +275,5 @@ func TestCombine(t *testing.T) {
 	h := Combine(&l, &r)
 	if h == c_type.Empty_Uint256 {
 		t.Fatal()
-	}
-}
-
-func TestPKrCrypte(t *testing.T) {
-	seed0 := c_type.RandUint256()
-	sk0 := Seed2Sk(&seed0)
-	tk0, _ := Sk2Tk(&sk0)
-	pk0, _ := Tk2Pk(&tk0)
-	pkr0, _ := Pk2PKr(&pk0, c_type.RandUint256().NewRef())
-
-	seed1 := c_type.RandUint256()
-	sk1 := Seed2Sk(&seed1)
-	tk1, _ := Sk2Tk(&sk1)
-	pk1, _ := Tk2Pk(&tk1)
-	pkr1, _ := Pk2PKr(&pk1, c_type.RandUint256().NewRef())
-
-	data := c_type.RandUint256()
-	dataEnc, _ := PkrCrypte(&data, &pkr0, &tk0, &pkr1)
-	dataDec, _ := PkrCrypte(&dataEnc, &pkr1, &tk1, &pkr0)
-	if dataDec != data {
-		t.FailNow()
 	}
 }
