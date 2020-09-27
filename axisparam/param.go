@@ -18,9 +18,9 @@ func XIP1() uint64 {
 
 func VP0() uint64{
 	if is_dev {
-		return uint64(20)
+		return uint64(12)
 	} else {
-		return uint64(20) //for init data
+		return uint64(12) //for init data
 	}
 }
 const MAX_O_INS_LENGTH = int(2500)
